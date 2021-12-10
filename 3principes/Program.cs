@@ -56,8 +56,8 @@ namespace _3principes
 
     class Children : Person
     {
-        public string Father { get; set; }
-        public string Mother { get; set; }
+        public string Father;
+        public string Mother;
 
         public Children(string name, int age, bool male, Person father,Person mother)
             : base(name,age,male)
@@ -92,6 +92,7 @@ namespace _3principes
         static void Main(string[] args)
         {
             Person Nikolai = new Person("Nikolai",50,true, "Asian");
+            Person Valentin = new Person("Valentin",55,true, "Cuacasoid");
             Person Vika = new Person("Vika",42,false, "Caucasoid");
             Children Efim = new Children("Efim",12,false,Nikolai,Vika);
             Console.WriteLine("Efim, son of "+Efim.Father+" and "+Efim.Mother+" have race: "+Efim.Race);
