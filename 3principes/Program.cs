@@ -58,7 +58,7 @@ namespace _3principes
     {
         public string Father;
         public string Mother;
-
+        public string school_grade;
         public Children(string name, int age, bool male, Person father,Person mother)
             : base(name,age,male)
         {
@@ -86,6 +86,14 @@ namespace _3principes
         {
              return Age;
         }
+        public void setGrade(int grade)
+        {
+            school_grade = grade.ToString()+"th grade";
+        }
+        public void setGrade(string grade)
+        {
+            school_grade = grade+" class";
+        }
     }
     class Program
     {
@@ -94,8 +102,13 @@ namespace _3principes
             Person Nikolai = new Person("Nikolai",50,true, "Asian");
             Person Valentin = new Person("Valentin",55,true, "Cuacasoid");
             Person Vika = new Person("Vika",42,false, "Caucasoid");
-            Children Efim = new Children("Efim",12,false,Nikolai,Vika);
-            Console.WriteLine("Efim, son of "+Efim.Father+" and "+Efim.Mother+" have race: "+Efim.Race);
+            Person Anya = new Person("Anya",32,false, "Asian");
+            Children Efim = new Children("Efim",12,true,Nikolai,Vika);
+            Children Olya = new Children("Olya",14,false,Valentin,Anya);
+            Olya.setGrade("Mathematical");
+            Efim.setGrade(9);
+            Console.WriteLine("Efim, son of "+Efim.Father+" and "+Efim.Mother+" have race "+Efim.Race+" and studying in "+Efim.school_grade);
+            Console.WriteLine("Olya, daughter of " + Olya.Father+" and "+ Olya.Mother+" have race "+ Olya.Race + " and studying in " + Olya.school_grade);
         }
     }
 }
