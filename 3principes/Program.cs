@@ -77,7 +77,7 @@ namespace _3principes
             {
                 throw new Exception("The child cannot be older than his parents");
             }
-            if(father.Male == mother.Male)
+            if(father.Male == mother.Male || father == mother)
             {
                 throw new Exception("Its impossible");
             }
